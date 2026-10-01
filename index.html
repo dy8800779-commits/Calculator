@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Created by Dipesh Yadav Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+    <div class="brand">
+        <div class="logo">D</div>
+        <div>
+            <h1>Created by Dipesh Yadav Calculator</h1>
+            <p>Scientific Calculator & Unit Converter</p>
+        </div>
+    </div>
+    <span class="status">● Ready</span>
+</header>
+
+<main class="container">
+    <section class="welcome">
+        <p class="eyebrow">YOUR PERSONAL CALCULATOR</p>
+        <h2>Calculate smarter, Dipesh.</h2>
+        <p>Simple calculations to advanced scientific functions.</p>
+    </section>
+
+    <nav class="tabs">
+        <button class="tab active" data-tab="calculator">Calculator</button>
+        <button class="tab" data-tab="scientific">Scientific</button>
+        <button class="tab" data-tab="converter">Unit Converter</button>
+    </nav>
+
+    <div class="workspace">
+        <section class="panel" id="calculatorPanel">
+            <div class="display">
+                <div class="display-label" id="displayLabel">STANDARD MODE</div>
+                <div id="expression" class="expression"></div>
+                <input id="display" value="0" readonly aria-label="Calculator display">
+            </div>
+
+            <div class="keypad">
+                <button class="key utility" data-action="clear">AC</button>
+                <button class="key utility" data-action="delete">DEL</button>
+                <button class="key utility" data-operator="%">%</button>
+                <button class="key operator" data-operator="/">÷</button>
+
+                <button class="key" data-number="7">7</button>
+                <button class="key" data-number="8">8</button>
+                <button class="key" data-number="9">9</button>
+                <button class="key operator" data-operator="*">×</button>
+
+                <button class="key" data-number="4">4</button>
+                <button class="key" data-number="5">5</button>
+                <button class="key" data-number="6">6</button>
+                <button class="key operator" data-operator="-">−</button>
+
+                <button class="key" data-number="1">1</button>
+                <button class="key" data-number="2">2</button>
+                <button class="key" data-number="3">3</button>
+                <button class="key operator" data-operator="+">+</button>
+
+                <button class="key utility" data-action="sign">+/−</button>
+                <button class="key" data-number="0">0</button>
+                <button class="key" data-action="decimal">.</button>
+                <button class="key equals" data-action="equals">=</button>
+            </div>
+
+            <div class="scientific-keys">
+                <button class="key science" data-science="sin">sin</button>
+                <button class="key science" data-science="cos">cos</button>
+                <button class="key science" data-science="tan">tan</button>
+                <button class="key science" data-science="sqrt">√</button>
+                <button class="key science" data-science="square">x²</button>
+                <button class="key science" data-science="power">xʸ</button>
+                <button class="key science" data-science="log">log</button>
+                <button class="key science" data-science="ln">ln</button>
+                <button class="key science" data-science="factorial">n!</button>
+                <button class="key science" data-science="pi">π</button>
+            </div>
+            <p class="hint">Trigonometry uses degrees. Keyboard input is supported.</p>
+        </section>
+
+        <aside class="panel history-panel">
+            <div class="section-heading">
+                <div>
+                    <h3>History</h3>
+                    <p>Your recent calculations</p>
+                </div>
+                <button id="clearHistory" class="text-button">Clear</button>
+            </div>
+            <div id="historyList" class="history-list">
+                <p class="empty">Your calculations will appear here.</p>
+            </div>
+        </aside>
+    </div>
+
+    <section class="panel converter-panel hidden" id="converterPanel">
+        <div class="section-heading">
+            <div>
+                <h3>Unit Converter</h3>
+                <p>Convert values between common units.</p>
+            </div>
+        </div>
+
+        <label for="unitType">Conversion category</label>
+        <select id="unitType">
+            <option value="length">Length</option>
+            <option value="weight">Weight</option>
+            <option value="temperature">Temperature</option>
+            <option value="speed">Speed</option>
+        </select>
+
+        <div class="converter-grid">
+            <div>
+                <label for="fromUnit">From</label>
+                <select id="fromUnit"></select>
+            </div>
+            <div>
+                <label for="toUnit">To</label>
+                <select id="toUnit"></select>
+            </div>
+        </div>
+
+        <label for="unitValue">Value</label>
+        <input type="number" id="unitValue" value="1" step="any">
+
+        <div class="result-card">
+            <p>CONVERTED RESULT</p>
+            <h2 id="conversionResult">1000</h2>
+            <p id="conversionDetails">1 km = 1000 m</p>
+        </div>
+
+        <button id="swapUnits" class="secondary-button">⇄ Swap units</button>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Created by Dipesh Yadav Calculator · Built with HTML, CSS & JavaScript</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
